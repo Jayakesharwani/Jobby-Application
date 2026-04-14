@@ -5170,7 +5170,6 @@ packages:
     dependencies:
       ansi-styles: 4.3.0
       supports-color: 7.2.0
-    dev: false
     engines:
       node: '>=10'
     resolution:
@@ -9269,7 +9268,7 @@ packages:
       '@jest/test-result': 26.6.2
       '@jest/types': 26.6.2
       '@types/node': 25.6.0
-      chalk: 4.1.0
+      chalk: 4.1.2
       co: 4.6.0
       expect: 26.6.2
       is-generator-fn: 2.1.0
