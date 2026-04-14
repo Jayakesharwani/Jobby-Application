@@ -1,0 +1,31 @@
+.filter-heading {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.filters-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.checkbox,
+.radio {
+  margin-right: 10px;
+}
+
+.filter-label {
+  color: #cbd5e1;
+  font-size: 16px;
+}
+
+.separator {
+  margin: 20px 0;
+  border: 1px solid #475569;
+}
