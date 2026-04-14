@@ -1,70 +1,62 @@
-// Write your code here
-import {withRouter, Link} from 'react-router-dom'
-import Cookies from 'js-cookie'
-import {BiHome} from 'react-icons/bi'
-import {BsBriefcaseFill} from 'react-icons/bs'
+import {Link, withRouter} from 'react-router-dom'
+import {AiFillHome} from 'react-icons/ai'
+import {BsFillBriefcaseFill} from 'react-icons/bs'
 import {FiLogOut} from 'react-icons/fi'
+import Cookies from 'js-cookie'
 
 import './index.css'
 
 const Header = props => {
   const onClickLogout = () => {
-    const {history} = props
     Cookies.remove('jwt_token')
+    const {history} = props
     history.replace('/login')
   }
-
   return (
-    <nav className="nav-header">
-      <div className="nav-content">
+    <nav className="navbar">
+      <div className="nav-container">
         <Link to="/">
           <img
             src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
             alt="website logo"
-            className="website-logo"
+            className="home-website-logo"
           />
         </Link>
-
-        {/* Large devices */}
-        <ul className="nav-menu">
-          <li className="nav-menu-item">
-            <Link to="/" className="nav-link">
+        <ul className="nav-items">
+          <li>
+            <Link to="/" className="nav-link-lg">
               Home
             </Link>
+            <Link to="/" className="nav-link-sm">
+              <AiFillHome className="small-header-icons" />
+            </Link>
           </li>
-          <li className="nav-menu-item">
-            <Link to="/jobs" className="nav-link">
+          <li>
+            <Link to="/jobs" className="nav-link-lg">
               Jobs
             </Link>
-          </li>
-        </ul>
-
-        <button type="button" className="logout-btn" onClick={onClickLogout}>
-          Logout
-        </button>
-
-        {/* Mobile Devices */}
-        <ul className="nav-mobile-icons">
-          <li>
-            <Link to="/">
-              <BiHome className="nav-icon" />
+            <Link to="/jobs" className="nav-link-sm">
+              <BsFillBriefcaseFill className="small-header-icons" />
             </Link>
           </li>
-          <li>
-            <Link to="/jobs">
-              <BsBriefcaseFill className="nav-icon" />
-            </Link>
-          </li>
-          <li>
+          <li className="logout-btn-list-item-small">
             <button
+              aria-label="Save"
               type="button"
-              className="logout-icon-btn"
+              className="logout-button-sm"
               onClick={onClickLogout}
             >
-              <FiLogOut className="nav-icon" />
+              <FiLogOut className="logout-icon-sm" />
             </button>
           </li>
         </ul>
+        <button
+          type="button"
+          className="logout-button-lg"
+          onClick={onClickLogout}
+        >
+          Logout
+        </button>
       </div>
     </nav>
   )
